@@ -24,6 +24,15 @@ const mackinac = localFont({
   display: "swap",
 });
 
+const inter = localFont({
+  variable: "--font-inter",
+  src: [
+    { path: "../public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf", style: "normal" },
+    { path: "../public/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf", style: "italic" },
+  ],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Health FE",
   description: "Health71 – Landing UI demo",
@@ -36,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${mackinac.variable} antialiased min-h-screen bg-gradient-to-b from-[#0b1220] via-[#0a0f1a] to-[#0b0f17] text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${mackinac.variable} ${inter.variable} antialiased min-h-screen bg-gradient-to-b from-[#0b1220] via-[#0a0f1a] to-[#0b0f17] text-white`}>
         {children}
       </body>
     </html>
