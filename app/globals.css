@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a; /* lock dark background */
+  --foreground: #ededed; /* lock dark foreground */
   /* brand font selection: change this variable to switch site-wide font */
   --brand-sans: var(--font-inter);
 }
@@ -14,12 +14,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Remove OS color scheme switching; always use dark tokens */
 
 body {
   background: var(--background);
