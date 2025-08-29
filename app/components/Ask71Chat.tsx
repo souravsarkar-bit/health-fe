@@ -62,7 +62,7 @@ export default function Ask71Chat() {
         acc += decoder.decode(value, { stream: true });
         setMessages((p) => p.map((m) => (m.id === assistant.id ? { ...m, content: acc } : m)));
       }
-    } catch (e) {
+    } catch {
       setMessages((p) => [...p, { id: `${Date.now()}-err`, role: "assistant", content: "Sorry, something went wrong." }]);
     } finally {
       setLoading(false);
