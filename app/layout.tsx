@@ -1,37 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
+ 
+const inter = Inter({ subsets: ['latin'] });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const mackinac = localFont({
-  variable: "--font-mackinac",
-  src: [
-    { path: "../public/fonts/Mackinac/Mackinac-Book.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/Mackinac/Mackinac-Book.woff", weight: "400", style: "normal" },
-    { path: "../public/fonts/Mackinac/Mackinac-BookItalic.woff2", weight: "400", style: "italic" },
-    { path: "../public/fonts/Mackinac/Mackinac-BookItalic.woff", weight: "400", style: "italic" },
-  ],
-  display: "swap",
-});
-
-const inter = localFont({
-  variable: "--font-inter",
-  src: [
-    { path: "../public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf", style: "normal" },
-    { path: "../public/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf", style: "italic" },
-  ],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Health FE",
@@ -45,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${mackinac.variable} ${inter.variable} antialiased min-h-screen bg-gradient-to-b from-[#0b1220] via-[#0a0f1a] to-[#0b0f17] text-white`}>
+      <body className={`${inter.className} antialiased min-h-screen`}>
         {children}
       </body>
     </html>

@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
 import Ask71Chat from "./components/Ask71Chat";
-
+import { ArrowUpRight } from "lucide-react";
+import { title } from "process";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 function ArrowIcon() {
   return (
     <svg
@@ -22,95 +26,170 @@ function ArrowIcon() {
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-[1120px] px-6 py-10">
+    <main className="mx-auto w-full max-w-[878px] p-5 pt-20">
       <header className="flex items-center gap-3">
-        <Image height={28} width={60} src="/icons/ai71_dark.svg" alt="Ai71" />
-        <span className="text-sm/6 text-white/60">Health71</span>
+        <h1 className="text-4xl font-semibold">Health by</h1>
+        <svg
+          width="66"
+          height="28"
+          viewBox="0 0 66 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M65.9464 0.995972H62.3906V26.9925H65.9464V0.995972Z"
+              fill="#F88265"
+            />
+            <path
+              d="M10.4032 27.4999C7.04315 27.4999 4.28936 26.3007 2.44211 24.0334C0.843809 22.076 0 19.4286 0 16.3783C0 8.79357 5.15788 0.672852 12.8377 0.672852C16.3878 0.672852 19.2138 1.77322 21.2416 3.94356C24.0847 6.98812 24.6529 11.4219 24.6814 14.6679C27.764 12.1023 32.1731 8.95891 34.294 9.52715C35.3716 9.81602 36.0424 10.7396 36.0424 11.9388V26.9944H32.4867V13.4516C30.17 14.7154 25.8464 18.2047 24.5275 19.4704V26.9963H20.9717V23.1231C18.1533 25.2973 14.1072 27.5037 10.4032 27.5037V27.4999ZM12.8377 4.22863C7.36813 4.22863 3.55578 10.6313 3.55578 16.3783C3.55578 18.6 4.12212 20.472 5.19779 21.7871C6.36468 23.2181 8.11691 23.9441 10.4032 23.9441C14.6583 23.9441 19.5958 19.8885 20.9736 18.3681C20.9793 18.1819 20.9945 17.9177 21.0173 17.5851C21.1693 15.3749 21.5703 9.50434 18.6436 6.36856C17.2981 4.92611 15.3995 4.22673 12.8377 4.22673V4.22863Z"
+              fill="#283754"
+            />
+            <path
+              d="M55.4367 5.88208C55.5469 6.19945 55.8244 7.30363 54.7658 8.13413C47.7607 13.6417 43.7754 20.0292 43.2071 26.9925H46.7762C47.3502 21.0725 50.7672 15.7987 56.9628 10.9297C58.8651 9.43596 59.5835 6.99765 58.7967 4.72089C58.0137 2.45933 55.9574 0.997864 53.5571 0.997864H39.792V4.55365H53.5571C54.8741 4.55365 55.3283 5.5723 55.4367 5.88398V5.88208Z"
+              fill="#AFD8D4"
+            />
+            <path
+              d="M31.4546 2.79387C31.4546 1.49395 32.4865 0.5 33.7485 0.5C35.0104 0.5 36.0423 1.49395 36.0423 2.79387C36.0423 4.09379 35.0104 5.04973 33.7485 5.04973C32.4865 5.04973 31.4546 4.05578 31.4546 2.79387Z"
+              fill="#283754"
+            />
+          </g>
+          <defs></defs>
+        </svg>
       </header>
 
-      <section className="mt-10">
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight font-sans">Health71: The Intelligence Layer for Modern Healthcare</h1>
+      <section className="mt-4">
+        <h1 className=" text-3xl font-normal">
+          The Intelligence Layer Orchestrating Modern Healthcare
+        </h1>
       </section>
 
-      <section className="mt-8">
-        <h2 className="text-white/80 text-sm uppercase tracking-wider">Our Agentic AI Solutions</h2>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Agentic AI Solutions */}
+      <section className="mt-9">
+        <h2 className="text-2xl font-semibold mb-4">
+          Our Agentic AI Solutions
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
             {
               title: "RCM71",
-              tag: "Your AI revenue cycle team on autopilot.",
-              sub: "Claims, coding, denials, and billing — handled by autonomous agents that cut costs by 30–50% and lift revenue by +3–5%.",
-              from: "from-slate-300/40",
-              to: "to-slate-500/20",
+              hoverData: (
+                <div className="absolute inset-0 rcm71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
+                  <p className="text-[16px] mb-4">
+                    Your AI revenue cycle team on autopilot.
+                  </p>
+                  <button
+                    onClick={() => {
+                      window.location.href =
+                        "https://health71-fe-git-feature-loginpage-mkstatusneos-projects.vercel.app/";
+                    }} // ← replace with your URL
+                    className="border cursor-pointer border-white px-4 py-1.5 rounded-full text-sm hover:bg-white hover:text-black transition"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              ),
             },
+           
             {
               title: "Docu71",
-              tag: "AI that writes, so doctors don’t have to.",
-              sub: "Ambient note capture and EMR summarization — reducing documentation time by up to 30%, multilingual and workflow-native",
-              from: "from-yellow-300/50",
-              to: "to-lime-500/20",
+              hoverData: (
+                <div className="absolute inset-0 docu71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
+                  <h3 className="text-lg font-semibold mb-1 text-white">Coming Soon</h3> 
+                 <p className="text-[16px] mb-4">
+                    AI that keeps your hospital<br /> humming.
+                  </p> 
+
+                </div>
+              ),
             },
-            {
+             {
               title: "Ops71",
-              tag: "AI that keeps your hospital humming.",
-              sub: "Forecasting, workforce management, patient flow optimization — boosting capacity by 10–25% through intelligent orchestration.",
-              from: "from-blue-500/40",
-              to: "to-indigo-700/20",
+              hoverData: (
+                <div className="absolute inset-0 ops71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
+                 <h3 className="text-lg font-semibold mb-1 text-white">Coming Soon</h3> 
+                 <p className="text-[16px] mb-4">
+                    AI that writes, so doctors<br /> don’t have to.
+                  </p> 
+
+                </div>
+              ),
             },
-          ].map((item) => (
-            <div key={item.title} className={`relative group rounded-xl p-5 min-h-[180px] bg-gradient-to-br ${item.from} ${item.to} ring-1 ring-white/10 hover:ring-white/20 transition-shadow shadow-[0_0_0_1px_rgba(255,255,255,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.35)]`}>
-              <div className="absolute inset-0 rounded-xl bg-[radial-gradient(1000px_200px_at_0%_100%,rgba(255,255,255,0.06),transparent)]" />
-              <div className="relative flex h-full flex-col gap-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-base font-medium drop-shadow-[0_1px_0_rgba(0,0,0,0.6)]">{item.title}</span>
-                  <div className="text-white/70 group-hover:text-white"><ArrowIcon /></div>
-                </div>
-                <p className="text-sm text-white/90">{item.tag}</p>
-                <p className="text-xs text-white/70 leading-relaxed">{item.sub}</p>
-                <div className="mt-auto flex gap-3 pt-2">
-                  <button className="text-xs rounded-md border border-white/20 bg-black/30 px-3 py-1 hover:bg-white/10">Login</button>
-                  <button className="text-xs rounded-md border border-white/20 bg-black/30 px-3 py-1 hover:bg-white/10">More info</button>
-                </div>
+          ].map((data, idx) => (
+            <div
+              key={idx}
+              className={`relative h-40 rounded-xl overflow-hidden group `}
+            >
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-all duration-300"
+                style={{ backgroundImage: `url(/${data.title.toLocaleLowerCase()}.png)` }}
+              />
+
+              {/* Default State */}
+              <div className="absolute inset-0 p-4 flex items-end justify-between text-white opacity-100 group-hover:opacity-0 transition-opacity">
+                <span className="font-semibold text-xl">{data.title}</span>
+
+                <img
+                  src={"/icons/arrow-right.png"}
+                  alt="arrow"
+                  className="h-8 w-8"
+                />
               </div>
+              {/* Hover State */}
+              {data.hoverData}
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="mt-6">
-        <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-          <div className="flex flex-col gap-2 items-start md:flex-row md:items-center md:justify-between">
-            <p className="text-white/90 font-medium">More Agents Coming Soon…</p>
-            <button className="rounded-lg bg-white/10 hover:bg-white/15 border border-white/10 px-3 py-1.5 text-sm text-white">Sign up</button>
-          </div>
-          <p className="mt-2 text-sm text-white/70">The Health71 agent network is growing. From RCM to clinical ops, our autonomous modules plug into your system and scale with your needs.</p>
+        <div className="text-center  mt-4 bg-basecard p-3 rounded-lg shadow-md">
+          <p className="font-semibold text-base mb-3.5">
+            More Agents Coming Soon…
+          </p>
+          <p className="text-xs desc-gray">
+            The Health71 agent network is growing. From RCM to clinical
+            <br /> ops, our autonomous modules plug into your system and scale
+            with your needs.
+          </p>
         </div>
       </section>
 
-      <section className="mt-8">
-        <h2 className="text-white/80 text-sm uppercase tracking-wider mb-3">Meet Ask71 – Your Healthcare AI Expert</h2>
+      {/* Ai boat */}
+      <section className="mt-11">
+        <h2 className=" text-3xl font-semibold mb-4">
+          Meet Ask – Your Healthcare AI Expert
+        </h2>
         <Ask71Chat />
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-white/80 text-sm uppercase tracking-wider">AI Agents</h2>
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {["Compliance Review AI Agent", "Progress Validation AI Agent", "Operational Feedback AI Agent", "Site Capture AI Agent"].map(
-            (agent) => (
-              <div key={agent} className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                <div className="h-28 bg-gradient-to-br from-sky-400/30 to-blue-700/20" />
-                <div className="p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">{agent}</span>
-                  </div>
-                  <div className="mt-3 flex gap-2">
-                    <button className="text-xs rounded-md border border-white/20 bg-black/30 px-3 py-1 hover:bg-white/10">Login</button>
-                    <button className="text-xs rounded-md border border-white/20 bg-black/30 px-3 py-1 hover:bg-white/10">More info</button>
-                  </div>
-                </div>
+      {/* Case Studies */}
+      <section className="mt-11">
+        <h2 className="text-2xl font-semibold mb-2">Case Studies</h2>
+        <p className="text-xl mb-3">Let’s see what we are doing…..</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+          {[
+            {
+              title: "RCM71",
+              desc: "Claims, coding, denials, and billing — handled by autonomous agents that cut costs by 30–50% and lift revenue by +3–5%.",
+            },
+            {
+              title: "Ops71",
+              desc: "Forecasting, workforce management, patient flow optimization — boosting capacity by 10–25% through intelligent orchestration.",
+            },
+            {
+              title: "Docu71",
+              desc: "Ambient note capture and EMR summarization — reducing documentation time by up to 30%, multilingual and workflow-native.",
+            },
+          ].map(({ title, desc }) => (
+            <div
+              key={title}
+              className={`bg-white border case-study rounded-xl p-4 flex flex-col justify-between bg-${title.toLocaleLowerCase()}`}
+            >
+              <div>
+                <h3 className="font-semibold text-2xl mb-1">{title}</h3>
+                <p className="text-sm text-gray-600 mt-1">{desc}</p>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
       </section>
     </main>

@@ -3,8 +3,10 @@
 :root {
   --background: #0a0a0a; /* lock dark background */
   --foreground: #ededed; /* lock dark foreground */
+  --base-foregroud: #212D45;
   /* brand font selection: change this variable to switch site-wide font */
   --brand-sans: var(--font-inter);
+  --base-card: #F9F7F6;
 }
 
 @theme inline {
@@ -17,11 +19,20 @@
 /* Remove OS color scheme switching; always use dark tokens */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+    background: radial-gradient(85.95% 70.71% at 100% 0%,  #AFD8D4 10%,  #F5F2EF 75%);
+
+  color: var(--base-foregroud);
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.disc-gray {
+  color: #736E68;
+}
+
+
+.bg-basecard {
+  background: var(--base-card);
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -32,4 +43,39 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.case-study {
+  border: 1px solid  rgba(115, 110, 104, 0.30);
+
+}
+
+.bg-docu71 {
+  background: url('/docu.png') top center no-repeat #fff;
+  padding-top: 170px;
+}
+
+.bg-rcm71 {
+  background: url('/rcm.png') top center no-repeat #fff;
+  padding-top: 170px;
+}
+
+.bg-ops71 {
+  background: url('/ops.png') top center no-repeat #fff;
+  padding-top: 170px;
+}
+
+.rcm71-hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('/rcm71.png') lightgray 50% / cover no-repeat;
+ 
+}
+
+.docu71-hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('/docu71.png') lightgray 50% / cover no-repeat;
+ 
+}
+
+.ops71-hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('/ops71.png') lightgray 50% / cover no-repeat;
+ 
 }
