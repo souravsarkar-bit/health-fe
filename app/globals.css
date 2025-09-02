@@ -53,16 +53,19 @@ body {
 .bg-docu71 {
   background: url('/docu.png') top center no-repeat #fff;
   padding-top: 170px;
+  background-size: contain;
 }
 
 .bg-rcm71 {
   background: url('/rcm.png') top center no-repeat #fff;
   padding-top: 170px;
+  background-size: contain;
 }
 
 .bg-ops71 {
   background: url('/ops.png') top center no-repeat #fff;
   padding-top: 170px;
+  background-size: contain;
 }
 
 .rcm71-hover {
@@ -78,4 +81,15 @@ body {
 .ops71-hover {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('/ops71.png') lightgray 50% / cover no-repeat;
  
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
 }

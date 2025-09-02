@@ -83,35 +83,39 @@ export default function Home() {
                       window.location.href =
                         "https://health71-fe-git-feature-loginpage-mkstatusneos-projects.vercel.app/";
                     }} // ← replace with your URL
-                    className="border cursor-pointer border-white px-4 py-1.5 rounded-full text-sm hover:bg-white hover:text-black transition"
+                    className="border cursor-pointer border-white px-4 py-1.5 rounded-md text-sm hover:bg-white hover:text-black transition"
                   >
                     Sign in
                   </button>
                 </div>
               ),
             },
-           
+
             {
               title: "Docu71",
               hoverData: (
                 <div className="absolute inset-0 docu71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
-                  <h3 className="text-lg font-semibold mb-1 text-white">Coming Soon</h3> 
-                 <p className="text-[16px] mb-4">
-                    AI that keeps your hospital<br /> humming.
-                  </p> 
-
+                  <h3 className="text-lg font-semibold mb-1 text-white">
+                    Coming Soon
+                  </h3>
+                  <p className="text-[16px] mb-4">
+                    AI that keeps your hospital
+                    <br /> humming.
+                  </p>
                 </div>
               ),
             },
-             {
+            {
               title: "Ops71",
               hoverData: (
                 <div className="absolute inset-0 ops71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
-                 <h3 className="text-lg font-semibold mb-1 text-white">Coming Soon</h3> 
-                 <p className="text-[16px] mb-4">
-                    AI that writes, so doctors<br /> don’t have to.
-                  </p> 
-
+                  <h3 className="text-lg font-semibold mb-1 text-white">
+                    Coming Soon
+                  </h3>
+                  <p className="text-[16px] mb-4">
+                    AI that writes, so doctors
+                    <br /> don’t have to.
+                  </p>
                 </div>
               ),
             },
@@ -123,7 +127,9 @@ export default function Home() {
               {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center transition-all duration-300"
-                style={{ backgroundImage: `url(/${data.title.toLocaleLowerCase()}.png)` }}
+                style={{
+                  backgroundImage: `url(/${data.title.toLocaleLowerCase()}.png)`,
+                }}
               />
 
               {/* Default State */}
@@ -162,34 +168,38 @@ export default function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="mt-11">
+      <section className="mt-11 overflow-x-hidden">
         <h2 className="text-2xl font-semibold mb-2">Case Studies</h2>
         <p className="text-xl mb-3">Let’s see what we are doing…..</p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
-          {[
-            {
-              title: "RCM71",
-              desc: "Claims, coding, denials, and billing — handled by autonomous agents that cut costs by 30–50% and lift revenue by +3–5%.",
-            },
-            {
-              title: "Ops71",
-              desc: "Forecasting, workforce management, patient flow optimization — boosting capacity by 10–25% through intelligent orchestration.",
-            },
-            {
-              title: "Docu71",
-              desc: "Ambient note capture and EMR summarization — reducing documentation time by up to 30%, multilingual and workflow-native.",
-            },
-          ].map(({ title, desc }) => (
-            <div
-              key={title}
-              className={`bg-white border case-study rounded-xl p-4 flex flex-col justify-between bg-${title.toLocaleLowerCase()}`}
-            >
-              <div>
-                <h3 className="font-semibold text-2xl mb-1">{title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{desc}</p>
+        <div className="flex gap-4 overflow-x-auto scrollbar-none scroll-smooth snap-x snap-mandatory">
+          <div className="flex gap-4 w-max mx-auto">
+            {[
+              {
+                title: "RCM71",
+                desc: "Claims, coding, denials, and billing — handled by autonomous agents that cut costs by 30–50% and lift revenue by +3–5%.",
+              },
+              {
+                title: "Ops71",
+                desc: "Forecasting, workforce management, patient flow optimization — boosting capacity by 10–25% through intelligent orchestration.",
+              },
+              {
+                title: "Docu71",
+                desc: "Ambient note capture and EMR summarization — reducing documentation time by up to 30%, multilingual and workflow-native.",
+              },
+            ].map(({ title, desc }) => (
+              <div
+                key={title}
+                className={`bg-white border flex-shrink-0 case-study rounded-3xl p-5.5 flex flex-col justify-between bg-${title.toLocaleLowerCase()} w-[350px]`}
+              >
+                <div>
+                  <h3 className="font-semibold text-[22.614px] mb-1">
+                    {title}
+                  </h3>
+                  <p className="text-[17px] text-gray-600 mt-1">{desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </main>
