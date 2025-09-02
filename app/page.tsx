@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* Ai boat */}
-      <section className="mt-11">
+      <section className="mt-11 mb-5">
         <h2 className=" text-3xl font-semibold mb-4">
           Meet Ask – Your Healthcare AI Expert
         </h2>
@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="mt-11 overflow-x-hidden">
+      {/* <section className="mt-11 overflow-x-hidden">
         <h2 className="text-2xl font-semibold mb-2">Case Studies</h2>
         <p className="text-xl mb-3">Let’s see what we are doing…..</p>
         <div className="flex gap-4 overflow-x-auto scrollbar-none scroll-smooth snap-x snap-mandatory">
@@ -201,7 +201,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
