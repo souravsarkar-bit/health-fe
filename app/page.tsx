@@ -72,7 +72,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
             {
-              title: "RCM71",
+              title: "RCM",
               hoverData: (
                 <div className="absolute inset-0 rcm71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
                   <p className="text-[16px] mb-4">
@@ -92,29 +92,29 @@ export default function Home() {
             },
 
             {
-              title: "Docu71",
+              title: "Clinical Documentation",
               hoverData: (
                 <div className="absolute inset-0 docu71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
                   <h3 className="text-lg font-semibold mb-1 text-white">
                     Coming Soon
                   </h3>
                   <p className="text-[16px] mb-4">
-                    AI that keeps your hospital
-                    <br /> humming.
+                    AI that writes, so doctors
+                    <br /> don’t have to.
                   </p>
                 </div>
               ),
             },
             {
-              title: "Ops71",
+              title: "HospitalOps",
               hoverData: (
                 <div className="absolute inset-0 ops71-hover flex flex-col items-center justify-center px-4 text-center opacity-0 group-hover:opacity-100 transition-opacity text-white">
                   <h3 className="text-lg font-semibold mb-1 text-white">
                     Coming Soon
                   </h3>
                   <p className="text-[16px] mb-4">
-                    AI that writes, so doctors
-                    <br /> don’t have to.
+                    AI that keeps your hospital
+                    <br /> humming.
                   </p>
                 </div>
               ),
@@ -128,13 +128,13 @@ export default function Home() {
               <div
                 className="absolute inset-0 bg-cover bg-center transition-all duration-300"
                 style={{
-                  backgroundImage: `url(/${data.title.toLocaleLowerCase()}.png)`,
+                  backgroundImage: `url(/${data.title.toLocaleLowerCase().replaceAll(' ', '')}-bg.png)`,
                 }}
               />
 
               {/* Default State */}
               <div className="absolute inset-0 p-4 flex items-end justify-between text-white opacity-100 group-hover:opacity-0 transition-opacity">
-                <span className="font-semibold text-xl">{data.title}</span>
+                <span className="font-semibold text-xl" style={{textShadow: '4px 4px 5px rgba(0, 0, 0, 0.2)'}}>{data.title}</span>
 
                 <img
                   src={"/icons/arrow-right.png"}
@@ -152,9 +152,9 @@ export default function Home() {
             More Agents Coming Soon…
           </p>
           <p className="text-xs desc-gray">
-            The Health71 agent network is growing. From RCM to clinical
-            <br /> ops, our autonomous modules plug into your system and scale
-            with your needs.
+            The Health by AI71 agent network is growing. From RCM to clinical <br /> 
+ops, our autonomous modules plug into your system and scale with your needs.
+         
           </p>
         </div>
       </section>
